@@ -1,0 +1,2 @@
+# BUILD DOCKER IMAGE COMMAND
+docker build -t dohuuhung1234/dohuuhung1234:ubuntu_1604 .
