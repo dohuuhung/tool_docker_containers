@@ -1,6 +1,12 @@
 # BUILD DOCKER IMAGE COMMAND
 docker build -t dohuuhung1234/dohuuhung1234:nginx_image .
 
+# PUSH DOCKER IMAGE TO ONLINE REPOSITORY
+docker push dohuuhung1234/dohuuhung1234:nginx_image 
+
+# PULL DOCKER IMAGE FROM ONLINE REPOSITORY
+docker pull dohuuhung1234/dohuuhung1234:nginx_image
+
 # RUN DOCKER CONTAINER COMMAND
 docker run -v /var/log/nginx/:/var/log/nginx/ -v /run/:/run/ --name nginx -d --network=host -p 80:80 -p 443:443 dohuuhung1234/dohuuhung1234:nginx_image
 docker run -v /var/log/nginx/:/var/log/nginx/ -v /run/:/run/ --name nginx -d --network=host -p 80:80 -p 443:443 dohuuhung1234/dohuuhung1234:nginx_image tail -f /dev/null
