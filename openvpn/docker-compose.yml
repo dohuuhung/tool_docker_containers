@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  openvpn_server:
+    image: '${DOCKER_REPO}:${IMAGE_TAG}'
+    container_name: openvpn_server
+    privileged: true
+    network_mode: host
+    restart: always
+    env_file:
+      - openvpn.env
+    volumes:
+      - /sys/kernel/security/:/sys/kernel/security/
+      - "${PWD}/neccessary_files/:/root/neccessary_files/"
+      - "${PWD}/client_files/:/root/client-configs/files/"
+#    build: .
